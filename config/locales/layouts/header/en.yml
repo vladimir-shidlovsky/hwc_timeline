@@ -2,3 +2,7 @@ en:
   layouts:
     header:
       text: Championship history - let's do it together
+      teams: Teams
+      games: Games
+      events: Events
+      people: People

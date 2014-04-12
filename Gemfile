@@ -9,6 +9,7 @@ gem 'slim-rails'
 gem 'devise', '~> 3.2.4'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'

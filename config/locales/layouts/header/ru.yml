@@ -2,3 +2,7 @@ ru:
   layouts:
     header:
       text: Напишем историю чемпионата вместе!
+      teams: Сборные
+      games: Матчи
+      events: События
+      people: Люди

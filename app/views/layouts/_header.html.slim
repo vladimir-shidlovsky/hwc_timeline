@@ -1,6 +1,26 @@
-div
-  - if user_signed_in?
-    = current_user.email
-    = link_to t('helpers.actions.sign_out'), destroy_user_session_path, method: :delete
-  - else
-    = link_to t('helpers.actions.sign_in'), new_user_session_path
+nav.nav-bar.navbar-default role='navigation'
+  .container-fluid
+    .navbar-header
+      a.navbar-brand href=root_path
+        = t '.text'
+    - if user_signed_in?
+      .navbar-collapse.collapse
+        ul.nav.navbar-nav
+          li
+            a href='#'
+              = t '.teams'
+          li
+            a href='#'
+              = t '.games'
+          li
+            a href='#'
+              = t '.events'
+          li
+            a href='#'
+              = t '.people'
+        ul.nav.navbar-nav.navbar-right
+          .navbar-text= current_user.email
+          li= link_to t('helpers.actions.sign_out'), destroy_user_session_path, method: :delete
+    - else
+      ul.nav.navbar-nav.navbar-right
+        li= link_to t('helpers.actions.sign_in'), new_user_session_path
