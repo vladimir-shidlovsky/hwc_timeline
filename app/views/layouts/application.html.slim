@@ -12,7 +12,7 @@ html
     = render 'layouts/header'
     .container
       - if notice.present?
-        p.notice= notice
+        .alert.alert-success.notice= notice
       - if alert.present?
-        p.alert= alert
+        .alert.alert-danger.notice= alert
       = yield

@@ -1,0 +1,7 @@
+= form_for Post.new do |f|
+  .controls
+    = f.text_area :message, rows: 5, cols: 30, class: 'form-control'
+    = f.submit class: 'btn btn-lg btn-primary btn-block'
+
+.posts
+  = render @posts
