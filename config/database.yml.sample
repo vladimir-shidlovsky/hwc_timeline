@@ -9,17 +9,19 @@ defaults: &defaults
 
 production:
   <<: *defaults
-  host: localhost
-  port: 5432
-  database: hwc_timeline
-  username: postgres
-  password: postgres
 
 development:
   <<: *defaults
+  database: 'hwc_timeline_dev'
+  host: 'localhost'
+  port: '5432'
+  username: 'nilcolor'
+  password: 'nilcolor'
+  database: 'hwc_timeline'
 
 staging:
   <<: *defaults
 
 test: &test
   <<: *defaults
+  database: 'hwc_timeline_test'
