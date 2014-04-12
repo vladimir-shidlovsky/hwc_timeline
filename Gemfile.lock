@@ -41,6 +41,15 @@ GIT
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
 
+GIT
+  remote: git://github.com/nilcolor/postgres_ext.git
+  revision: 913f2cad4d0cb6ece0b3e7b4ac7223b25ff6daec
+  specs:
+    postgres_ext (2.2.0)
+      activerecord (~> 4.1.0)
+      arel (~> 5.0.0)
+      pg_array_parser (~> 0.0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -144,6 +153,7 @@ GEM
       omniauth (~> 1.0)
     orm_adapter (0.5.0)
     pg (0.17.1)
+    pg_array_parser (0.0.9)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -225,6 +235,7 @@ DEPENDENCIES
   omniauth-facebook (= 1.4.0)
   pg (~> 0.17.0)
   polyamorous!
+  postgres_ext!
   rails (= 4.1.0)
   ransack!
   sass-rails (~> 4.0.3)
