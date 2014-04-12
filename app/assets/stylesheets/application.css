@@ -14,3 +14,7 @@
  *= require bootstrap
  *= require posts
  */
+
+.modal-content {
+  padding: 15px 45px
+}
