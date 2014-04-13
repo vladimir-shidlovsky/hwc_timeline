@@ -30,7 +30,7 @@ nav.nav-bar.navbar-default role='navigation'
               - else
                 - favs.each do |e|
                   li
-                    a href="#"= e.to_s
+                    = link_to(e.to_s, remove_user_favourites_path(e.tag_ids.join('/')), method: :delete)
 
               / li.divider
         ul.nav.navbar-nav.navbar-right
