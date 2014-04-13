@@ -85,9 +85,9 @@ ActiveRecord::Schema.define(version: 20140413010502) do
   create_table "teams", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tag_ids",    default: [], null: false, array: true
     t.string   "name_en"
     t.string   "name_ru"
-    t.integer  "tag_ids",    default: [], null: false, array: true
   end
 
   add_index "teams", ["tag_ids"], name: "index_teams_on_tag_ids", using: :gin

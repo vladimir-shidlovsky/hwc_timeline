@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit([:message, :tag_ids])
+    params.require(:post).permit([:message, tag_ids: []])
   end
 
   def load_posts
