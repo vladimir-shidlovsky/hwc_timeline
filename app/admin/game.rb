@@ -11,8 +11,8 @@ ActiveAdmin.register Game do
   end
   form do |f|
     f.inputs do
-      f.input :team_1_id, as: :select, collection: Team.all.map{ |t| [t.name, t.id] }
-      f.input :team_2_id, as: :select, collection: Team.all.map{ |t| [t.name, t.id] }
+      f.input :team_1_id, as: :select, collection: Team.all
+      f.input :team_2_id, as: :select, collection: Team.all
       f.input :date, as: :datetime
     end
     f.actions

@@ -13,8 +13,9 @@
  *= require_self
  *= require bootstrap
  *= require bootstrap-tagsinput
+ *= require common
  *= require posts
- *= require teams
+ *= require games
  */
 
 .modal-content {

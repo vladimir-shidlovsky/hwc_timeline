@@ -1,0 +1,11 @@
+.panel.panel-success
+  .panel-heading
+    .panel-title= l day.first, format: '%d %B'
+  .panel-body
+    - day.last.each do |game|
+      .game-line id=dom_id(game)
+        = link_to game_path(game) do
+          b= l(game.date, format: '%H:%m')
+          span= game.team_1.name
+          span= ' - '
+          span= game.team_2.name
