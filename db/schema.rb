@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413001951) do
+ActiveRecord::Schema.define(version: 20140413005241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +55,10 @@ ActiveRecord::Schema.define(version: 20140413001951) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tag_ids",     default: [], null: false, array: true
   end
+
+  add_index "events", ["tag_ids"], name: "index_events_on_tag_ids", using: :gin
 
   create_table "posts", force: true do |t|
     t.integer  "user_id"
@@ -76,9 +79,12 @@ ActiveRecord::Schema.define(version: 20140413001951) do
   create_table "teams", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tag_ids",    default: [], null: false, array: true
     t.string   "name_en"
     t.string   "name_ru"
   end
+
+  add_index "teams", ["tag_ids"], name: "index_teams_on_tag_ids", using: :gin
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
