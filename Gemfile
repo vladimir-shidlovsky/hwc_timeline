@@ -17,9 +17,14 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'spring', group: :development
-
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 gem 'formtastic', github: 'justinfrench/formtastic'
+
+group :development do
+  gem 'spring', group: :development
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+end

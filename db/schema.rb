@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140412225023) do
+ActiveRecord::Schema.define(version: 20140412233853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,10 @@ ActiveRecord::Schema.define(version: 20140412225023) do
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tag_ids",    default: [], null: false, array: true
   end
+
+  add_index "posts", ["tag_ids"], name: "index_posts_on_tag_ids", using: :gin
 
   create_table "tags", force: true do |t|
     t.string   "name"
