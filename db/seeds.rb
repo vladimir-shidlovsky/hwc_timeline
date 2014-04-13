@@ -1,6 +1,6 @@
 countries = [['Russia', 'Россия'],
              ['Belarus', 'Беларусь'],
-             ['Czech Republic', ''],
+             ['Czech Republic', 'Чехия'],
              ['Sweden', 'Швеция'],
              ['Canada', 'Канада'],
              ['Switzerland', 'Швейцария'],
