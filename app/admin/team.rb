@@ -1,3 +1,3 @@
 ActiveAdmin.register Team do
-  permit_params :name
+  permit_params [:name_en, :name_ru]
 end
