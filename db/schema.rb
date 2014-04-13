@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413034733) do
+ActiveRecord::Schema.define(version: 20140413061126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +64,10 @@ ActiveRecord::Schema.define(version: 20140413034733) do
     t.integer  "team_1_id"
     t.integer  "team_2_id"
     t.datetime "date"
+    t.integer  "tag_ids",   default: [], null: false, array: true
   end
+
+  add_index "games", ["tag_ids"], name: "index_games_on_tag_ids", using: :gin
 
   create_table "posts", force: true do |t|
     t.integer  "user_id"

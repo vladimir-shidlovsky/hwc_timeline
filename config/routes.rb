@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   resources :teams
   resources :games
   resources :events
+
+  put '/user/favourite/*tag_ids' => 'user_favourites#create', as: :add_user_favourites
+  delete '/user/favourite/*tag_ids' => 'user_favourites#delete', as: :remove_user_favourites
 end

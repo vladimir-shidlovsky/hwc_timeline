@@ -1,0 +1,6 @@
+-if user_keep_an_eye_on? target_tags
+  =link_to remove_user_favourites_path(target_tags.join('/')), method: :delete, class: 'btn btn-info btn-xs' do
+    span.glyphicon.glyphicon-star Больше не следить
+-else
+  =link_to add_user_favourites_path(target_tags.join('/')), method: :put, class: 'btn btn-info btn-xs' do
+    span.glyphicon.glyphicon-star-empty Начать следить

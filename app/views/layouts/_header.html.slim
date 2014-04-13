@@ -18,8 +18,23 @@ nav.nav-bar.navbar-default role='navigation'
           li
             a href=posts_path
               = t '.people'
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown"
+              | Мой список слежения
+              b.caret
+            ul.dropdown-menu
+              - favs = user_favourites
+              - if favs.empty?
+                li
+                  a href="#" Начните следить за кем-нибуть!
+              - else
+                - favs.each do |e|
+                  li
+                    a href="#"= e.to_s
+
+              / li.divider
         ul.nav.navbar-nav.navbar-right
-          .navbar-text= current_user.email
+          .navbar-text= "#{current_user.email} (#{current_user.favourite_tags.to_s})"
           li= link_to t('helpers.actions.sign_out'), destroy_user_session_path, method: :delete
     - else
       ul.nav.navbar-nav.navbar-right

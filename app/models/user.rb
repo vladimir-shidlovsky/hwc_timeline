@@ -23,4 +23,17 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def add_tags(tags)
+    update_attributes favourite_tags: (favourite_tags + Array(tags).map(&:to_i)).to_set
+  end
+
+  def remove_tags(tags)
+    update_attributes favourite_tags: (favourite_tags - Array(tags).map(&:to_i)).to_set
+  end
+
+  def favourite_tags=(tags)
+    favourite_tags_will_change!
+    super Array(tags)
+  end
 end
