@@ -8,7 +8,7 @@
       = l @game.date, format: '%d %B %H:%M'
     span.game-visitors
       = link_to t('.visitors')
-
-  = render partial: 'components/follow_button', locals: {target_tags: @game.tag_ids}
+    span.actions
+      = render partial: 'components/follow_button', locals: {target_tags: @game.tag_ids}
 
   = render '/posts/posts', tags: []

@@ -6,10 +6,11 @@
       = l @event.date, format: '%d %B %H:%M'
     span.event-visitors
       = link_to t('.visitors')
+    span.actions
+      = render partial: 'components/follow_button', locals: {target_tags: @event.tag_ids}
+
   .panel.panel-default
     .panel-body
       = @event.description
-
-  = render partial: 'components/follow_button', locals: {target_tags: @event.tag_ids}
 
   = render '/posts/posts', tags: @event.tag_ids
