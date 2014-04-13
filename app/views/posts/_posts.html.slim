@@ -1,4 +1,5 @@
-a.btn.btn-lg.btn-block.btn-success#create-new-post href='#' Добавить новый пост
+a.btn.btn-lg.btn-block.btn-success#create-new-post href='#'
+  = t '.new_post'
 
 .posts
   = render Post.where.contains(tag_ids: tags)
