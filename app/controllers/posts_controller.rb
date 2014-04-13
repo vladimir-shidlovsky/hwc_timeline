@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     @post = Post.new(post_params.merge({ user: current_user }))
     unless @post.save
       flash[:alert] = @post.errors.full_messages.join("\n")
