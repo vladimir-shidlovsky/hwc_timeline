@@ -1,0 +1,17 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      button.close type='button' data-dismiss='modal' &times;
+      h4.modal-title Modal title
+    = form_for Post.new do |f|
+      modal-body
+        .controls
+          = f.text_area :message, rows: 5, cols: 30, class: 'form-control'
+          = f.select :tag_ids, Tag.select(:id, :name).map{|t| [t.name, t.id]}, {}, { multiple: true }
+          .upload
+            / button.btn.btn-upload Upload Image
+            = hidden_field_tag :image_cache
+            = file_field_tag :file, class: '', data: { url: post_images_path }
+            = image_tag '', data: { behaviour: "image-preview" }
+      modal-footer
+        = f.submit class: 'btn btn-lg btn-primary btn-block'

@@ -5,4 +5,6 @@
       span.tags
         - Tag.where(id: post.tag_ids).each do |tag|
           span.tag= "##{tag.name}"
-  .panel-body= post.message
+  .panel-body
+    = image_tag post.post_image.try(:image).try(:url, :thumbnail)
+    = post.message

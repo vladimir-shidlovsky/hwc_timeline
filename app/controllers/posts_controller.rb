@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :load_posts
+  before_action :parse_image_cache, only: :create
 
   def index
   end
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
     unless @post.save
       flash[:alert] = @post.errors.full_messages.join("\n")
     end
+    PostImage.create(image_cache: @image_cache, post: @post) if @image_cache
     render :index
   end
 
@@ -20,5 +22,9 @@ class PostsController < ApplicationController
 
   def load_posts
     @posts = Post.order(created_at: :desc)
+  end
+
+  def parse_image_cache
+    @image_cache = params[:image_cache]
   end
 end

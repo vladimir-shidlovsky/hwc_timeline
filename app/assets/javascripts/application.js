@@ -15,3 +15,5 @@
 //= require bootstrap
 //= require bootstrap-tagsinput
 //= require posts
+//= require post_form
+//= require jquery-fileupload/basic

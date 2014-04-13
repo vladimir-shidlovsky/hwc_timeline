@@ -11,9 +11,12 @@ gem 'devise', '~> 3.2.4'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'carrierwave', '~> 0.10.0'
+gem 'rmagick', '~> 2.13.2', require: false
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+gem 'jquery-fileupload-rails', '~> 0.4.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
