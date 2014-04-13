@@ -4,4 +4,7 @@ class Game < ActiveRecord::Base
 
   validates :team_1, presence: true
   validates :team_1, presence: true
+
+  scope :featured, -> { where('date >= ?', Time.zone.now - 1.hour) }
+  scope :recent, -> { where('date < ?', Time.zone.now - 1.hour) }
 end

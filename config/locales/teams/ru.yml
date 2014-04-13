@@ -2,3 +2,7 @@ ru:
   teams:
     index:
       title: Сборные
+    featured_games:
+      title: Предстоящие матчи
+    recent_games:
+      title: Прошедшие матчи

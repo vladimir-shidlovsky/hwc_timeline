@@ -1,6 +1,6 @@
 .panel.panel-success
   .panel-heading
-    .panel-title= l day.first, format: '%d %B'
+    .panel-title= "#{ l day.first, format: '%d %B' } (#{ day.last.size })"
   .panel-body
     - day.last.each do |event|
       .game-line id=dom_id(event)

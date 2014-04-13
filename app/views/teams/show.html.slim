@@ -1,1 +1,10 @@
-h3= @team.name
+.team
+  .team-name
+    h2== "#{ @team.name } #{ link_to t('.has_fans') }"
+
+  - if @team.games.featured.present?
+    = render 'featured_games'
+  - if @team.games.recent.present?
+    = render 'recent_games'
+
+  = render '/posts/posts', tags: @team.tag_ids

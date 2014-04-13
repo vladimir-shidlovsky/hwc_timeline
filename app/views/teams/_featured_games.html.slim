@@ -1,8 +1,8 @@
-.panel.panel-success
+.panel.panel-success.team-games
   .panel-heading
-    .panel-title= "#{ l day.first, format: '%d %B' } (#{ day.last.size })"
+    .panel-title= t '.title'
   .panel-body
-    - day.last.each do |game|
+    - @team.games.featured.each do |game|
       .game-line id=dom_id(game)
         = link_to game_path(game) do
           b= l(game.date, format: '%H:%m')

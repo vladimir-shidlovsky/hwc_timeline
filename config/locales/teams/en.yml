@@ -2,3 +2,7 @@ en:
   teams:
     index:
       title: Teams
+    featured_games:
+      title: Featured games
+    recent_games:
+      title: Recent games

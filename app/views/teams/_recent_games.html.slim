@@ -1,0 +1,12 @@
+.panel.panel-warning.team-games
+  .panel-heading
+    .panel-title= t '.title'
+  .panel-body
+    - @team.games.recent.each do |game|
+      .game-line id=dom_id(game)
+        = link_to game_path(game) do
+          = link_to game_path(game) do
+            b= l(game.date, format: '%H:%m')
+            span= game.team_1.name
+            span= ' - '
+            span= game.team_2.name

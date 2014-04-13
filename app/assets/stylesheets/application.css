@@ -16,6 +16,7 @@
  *= require common
  *= require posts
  *= require games
+ *= require teams
  */
 
 .modal-content {
