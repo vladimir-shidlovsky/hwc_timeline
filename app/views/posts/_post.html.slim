@@ -1,4 +1,8 @@
 .panel.panel-info id=dom_id(post)
   .panel-heading
-    .panel-title= post.user.email
+    .panel-title
+      = post.user.email
+      span.tags
+        - Tag.where(id: post.tag_ids).each do |tag|
+          span.tag= "##{tag.name}"
   .panel-body= post.message

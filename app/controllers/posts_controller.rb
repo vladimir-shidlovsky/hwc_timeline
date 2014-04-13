@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     @post = Post.new(post_params.merge({ user: current_user }))
     unless @post.save
       flash[:alert] = @post.errors.full_messages.join("\n")
@@ -15,7 +16,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit([:message, :tag_ids])
   end
 
   def load_posts
