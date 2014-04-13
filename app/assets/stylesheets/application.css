@@ -17,6 +17,7 @@
  *= require posts
  *= require games
  *= require teams
+ *= require events
  */
 
 .modal-content {

@@ -1,3 +1,13 @@
-h3= @event.title
-h3= @event.description
-h3= @event.date
+.event
+  .event-title
+    span.event-title-text
+      = @event.title
+    span.event-date
+      = l @event.date, format: '%d %B %H:%M'
+    span.event-visitors
+      = link_to t('.visitors')
+  .panel.panel-default
+    .panel-body
+      = @event.description
+
+  = render '/posts/posts', tags: @event.tag_ids

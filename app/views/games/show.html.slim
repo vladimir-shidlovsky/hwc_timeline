@@ -1,3 +1,12 @@
-h3= @game.team_1.name
-h3= @game.team_2.name
-h3= @game.date
+.game
+  .game-title
+    span.game-teams
+      = link_to @game.team_1.name, team_path(@game.team_1)
+      span= ' - '
+      = link_to @game.team_2.name, team_path(@game.team_2)
+    span.game-date
+      = l @game.date, format: '%d %B %H:%M'
+    span.game-visitors
+      = link_to t('.visitors')
+
+  = render '/posts/posts', tags: []
