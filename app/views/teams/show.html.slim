@@ -7,4 +7,6 @@
   - if @team.games.recent.present?
     = render 'recent_games'
 
+  = render partial: 'components/follow_button', locals: {target_tags: @team.tag_ids}
+
   = render '/posts/posts', tags: @team.tag_ids
